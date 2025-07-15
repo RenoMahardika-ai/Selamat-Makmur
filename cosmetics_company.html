@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Makmur - Premium Beauty Solutions</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', Serif;
+        }
+        
+        :root {
+            --primary-red: #e63946;
+            --primary-white: #ffffff;
+            --secondary-red: #d62839;
+            --dark-red: #c1121f;
+            --light-gray: #f8f9fa;
+            --dark-gray: #212529;
+        }
+        
+        body {
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--primary-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+ 
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(112, 12, 20, 0.808), rgba(170, 76, 86, 0.911)),
+                url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: var(--primary-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 70px;
+    animation: fadeSlideIn 1.2s ease-out both;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeSlideIn 1.4s ease-out both;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    animation: fadeSlideIn 1.6s ease-out both;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: var(--primary-white);
+    color: var(--primary-red);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeSlideIn 1.8s ease-out both;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+/* Keyframes fade + slide */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kelas awal untuk animasi */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+/* Kelas aktif saat muncul */
+.animate-on-scroll.visible {
+    animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+}
+
+/* Terapkan animasi */
+.hero,
+.hero h1,
+.hero p,
+.cta-button {
+    animation: fadeSlideIn 1s ease-out forwards;
+}
+
+/* Delay berbeda untuk tiap elemen */
+.hero h1 {
+    animation-delay: 3s;
+}
+
+.hero p {
+    animation-delay: 2s;
+}
+
+.cta-button {
+    animation-delay: 1s;
+}
+        
+        /* About Section */
+        .about {
+            padding: 100px 50px;
+            background-color: var(--primary-white);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary-red);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+      
+.services {
+    padding: 60px 20px;
+    background-color: #fff8f5;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Unique background colors */
+.service-card.consultation {
+    background-color: #ffb6b9; /* Soft red/pink */
+}
+
+.service-card.makeup {
+    background-color: #c1bfff; /* Soft purple */
+}
+
+.service-card.skincare {
+    background-color: #b2f2bb; /* Soft green */
+}
+
+/* Icon styling */
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card.consultation .service-icon {
+    color: #b71c1c;
+}
+
+.service-card.makeup .service-icon {
+    color: #4527a0;
+}
+
+.service-card.skincare .service-icon {
+    color: #1b5e20;
+}
+
+        
+        /* Products Section */
+        .products {
+            padding: 100px 50px;
+            background-color: var(--primary-white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+        
+        .product-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--dark-red);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--primary-white);
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary-white);
+        }
+        
+        .footer-column p, 
+        .footer-column a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #aaa;
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-white);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SelamatMakmur</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Discover Your Beauty</h1>
+        <p>Premium cosmetics crafted with care, designed to enhance your natural beauty using only the finest ingredients nature has to offer.</p>
+        <button class="cta-button">Shop Now</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Passion for Beauty</h3>
+                <p>Founded in 2010, SelamatMakmur Cosmetics has been dedicated to creating high-quality beauty products that celebrate individuality and self-expression. Our mission is to provide innovative, cruelty-free cosmetics that make you feel confident and beautiful.</p>
+                <p>All our products are meticulously formulated with natural ingredients, free from harmful chemicals, and tested for quality and performance. We believe beauty should be ethical, sustainable, and accessible to all.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09edeba3-1022-4597-87ac-60bbf67e178d.png" alt="Modern cosmetics laboratory with scientists working on beauty products with precision equipment" />
+            </div>
+        </div>
+    </section>
+
+   <!-- Services Section -->
+<section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card consultation">
+            <div class="service-icon"><i class="fas fa-user-md"></i></div>
+            <h3>Custom Beauty Consultation</h3>
+            <p>Personalized beauty consultations with our experts to help you find the perfect products for your skin type and preferences.</p>
+        </div>
+
+        <div class="service-card makeup">
+            <div class="service-icon"><i class="fas fa-magic"></i></div>
+            <h3>Professional Makeup Application</h3>
+            <p>Book a session with our professional makeup artists for special occasions or to learn new techniques.</p>
+        </div>
+
+        <div class="service-card skincare">
+            <div class="service-icon"><i class="fas fa-spa"></i></div>
+            <h3>Skincare Analysis</h3>
+            <p>Detailed skin analysis to determine your skin type and recommend the ideal skincare regimen.</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ffd362e0-e6c0-4960-b07a-61b1f6ed126b.png" alt="Luxurious red lipstick in gold packaging on marble surface with rose petals" />
+                </div>
+                <div class="product-info">
+                    <h3>Velvet Matte Lipstick</h3>
+                    <p>Richly pigmented, long-wearing lipstick with a velvety matte finish.</p>
+                    <div class="product-price">$28.99</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/40f0ee10-bc25-44ee-8e37-dd4d54fabd24.png" alt="Elegant eyeshadow palette with warm neutral tones and gold accents" />
+                </div>
+                <div class="product-info">
+                    <h3>Nudes Eyeshadow Palette</h3>
+                    <p>18 versatile neutral shades with both matte and shimmer finishes.</p>
+                    <div class="product-price">$42.00</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f230667d-8fb2-438e-b8fc-3e7ed022ba05.png" alt="Skincare serum bottle with dropper on minimalist white background" />
+                </div>
+                <div class="product-info">
+                    <h3>Hydrating Serum</h3>
+                    <p>Lightweight yet intensely hydrating serum with hyaluronic acid.</p>
+                    <div class="product-price">$34.50</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c761c1c-a1a5-4717-b21f-0e650e82d45a.png" alt="Sleek black mascara tube with gold details isolated on pink background" />
+                </div>
+                <div class="product-info">
+                    <h3>Volume Mascara</h3>
+                    <p>Smudge-proof mascara that delivers dramatic volume and length.</p>
+                    <div class="product-price">$24.99</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About SelamatMakmur</h3>
+                <p>Premium beauty products inspired by nature, crafted with science, designed for you.</p>
+                <div class="social-icons">
+                    <div class="social-icon">f</div>
+                    <div class="social-icon">t</div>
+                    <div class="social-icon">i</div>
+                    <div class="social-icon">p</div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Products</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns & Exchanges</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form>
+                    <input type="email" placeholder="Your Email" style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #444;">
+                    <button type="submit" style="width:100%; padding:10px; background-color:var(--primary-red); color:white; border:none; border-radius:5px; cursor:pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 SelamatMakmur Cosmetics. All rights reserved.
+        </div>
+    </footer>
+    <script>
+    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Jika hanya mau animasi sekali, uncomment ini:
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    scrollElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+
